@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title> ΕΡΓΑΣΙΑ</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene> 
+     <a-sound src="audio/Forever Young - Otis McDonald.mp3" autoplay="true" position="0 0 0"></a-sound>
+      <!--ΕΙΣΑΓΩΓΗ ΟΝΟΜΑΤΟΣ value: ( TO ONOMA SOY)-->
+      <a-entity
+  text="value: Name; color:	#000000" 
+  position="4.5 2.5 -3"
+  scale="12 12 12">
+    </a-entity>
+    
+    <a-camera>
+    <a-cursor></a-cursor>
+     </a-camera>
+      
+      <a-box position="-3 0.5 -4"
+       rotation="0 45 0 "
+        color="#4CC3D9" 
+        src="images/box.jpg"
+        animation="property: rotation; 
+        to: 0 360 0; 
+        loop: true;
+        dur: 5000;
+        easing: linear;"
+        animation__mouseenter="property: components.material.material.color; type: color; to: #FFFF00; startEvents: mouseenter;"
+        animation__mouseleave="property: components.material.material.color; type: color; to: #4CC3D9; startEvents: mouseleave;">
+      
+      </a-box>
+      
+   
+    <a-entity position="0 1.5 -7.5"
+    animation="property: position; 
+    from : 1 1.25 -3;
+    to: -3 1.25 -3; 
+    loop: true;
+    dir: alternative;
+    dur: 3000;
+    easing: linear;">
+      <a-sphere 
+      position="1 1.25 -5"
+     radius="0.75" 
+     color="#EF2D5E" 
+     src="images/sphere.jpg"
+     animation="property: rotation; 
+      to: 0 360 0; 
+      loop: true;
+      dur: 4000;
+      easing: linear;"
+      animation__mouseenter="property: rotation; to: 0 -360 0; loop: true; startEvents: mouseenter;"
+      animation__mouseleave="property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear; startEvents:mouseleave;">
+    
+    </a-sphere>
+
+    </a-entity>
+      
+      <a-cylinder
+       position="3 0.75 -3" 
+       radius="0.4" 
+       height="1.5" 
+       color="#FFC65D" 
+       src="images/cylinder.jpg"
+       animation="property: position; 
+       from:3 0.75 -3;
+      to: 3 0.1 -3; 
+      loop: true;
+      dir: normal;
+      dur: 3000;
+      easing: linear;"
+      animation__mouseenter="property: position; type: position; from: 3 0.75 -3 to: 3 0.75 -6; startEvents: mouseenter;"
+      animation__mouseleave="property: position; type: position; from: 3 0.75 -6 to: 3 0.75 -3; startEvents: mouseleave;">
+      </a-cylinder>
+      
+      <a-plane position="0 0 -4" shader:="flat"rotation="-90 0 0" width="10" height="10" color="#7BC8A4" src="images/floor.jpg"></a-plane>
+      <a-sky environment="preset: yavapai;"></a-sky> 
+    </a-scene>
+  </body>
+</html>
